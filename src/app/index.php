@@ -9,7 +9,7 @@
     <h1>レシピ管理アプリへようこそ</h1>
     <nav>
         <ul>
-            <li><a href="templates/form.html">レシピ作成</a></li>
+            <li><a href="../templates/form.html">レシピ作成</a></li>
         </ul>
     </nav>
 </body>

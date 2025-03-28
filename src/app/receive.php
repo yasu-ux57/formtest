@@ -39,6 +39,38 @@ echo '<br>';
 </body>
 </html>
 -->
+<?php
+// DB接続用（ユーザー名・パスワードは適宜調整）
+$user = 'root';
+$pass = 'example';
+
+try {
+    $dbh = new PDO('mysql:host=db;dbname=recipe_db;charset=utf8', $user, $pass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // フォームから受け取る
+    $recipe_name = $_POST['recipe_name'];
+    $category = $_POST['category'];
+    $difficulty = $_POST['difficulty'];
+    $budget = is_numeric($_POST['budget']) ? $_POST['budget'] : null;
+    $howto = $_POST['howto'];
+
+    // SQL実行（INSERT）
+    $sql = "INSERT INTO recipes (recipe_name, category, difficulty, budget, howto)
+            VALUES (:recipe_name, :category, :difficulty, :budget, :howto)";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':recipe_name', $recipe_name);
+    $stmt->bindParam(':category', $category);
+    $stmt->bindParam(':difficulty', $difficulty);
+    $stmt->bindParam(':budget', $budget);
+    $stmt->bindParam(':howto', $howto);
+    $stmt->execute();
+
+} catch (PDOException $e) {
+    echo 'エラー: ' . htmlspecialchars($e->getMessage(), ENT_QUOTES);
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -83,4 +115,3 @@ echo '<br>';
 </div>
 </body>
 </html>
-
