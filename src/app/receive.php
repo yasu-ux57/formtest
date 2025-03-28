@@ -112,6 +112,7 @@ try {
         <h3>作り方</h3>
         <p><?= nl2br(htmlspecialchars($_POST['howto'], ENT_QUOTES)) ?></p>
     </div>
+    <p><a href="list.php">▶ レシピ一覧へ</a></p>
 </div>
 </body>
 </html>

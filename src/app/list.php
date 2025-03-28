@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>レシピ一覧</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <h1>レシピ一覧</h1>
+
 <?php
 $user = 'root';
 $pass = 'example';
@@ -29,7 +39,6 @@ try {
     echo 'エラー発生: ' . htmlspecialchars($e->getMessage(), ENT_QUOTES) . '<br>';
     exit;
  }
- 
  
 
 ?>
