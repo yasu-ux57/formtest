@@ -1,0 +1,65 @@
+/* --- レシピ全体コンテナのスタイル --- */
+.recipe-details {
+    font-family: sans-serif;        /* 読みやすいサンセリフ系フォント */
+    line-height: 1.5;              /* 全体の行間をゆったりめに */
+    max-width: 600px;              /* コンテンツの最大幅を設定（中央寄せ） */
+    margin: 0 auto;
+  }
+  
+  /* --- カテゴリ・難易度・予算項目のレイアウト --- */
+  .info-items {
+    display: flex;                 /* 横並び配置 */
+    flex-wrap: wrap;               /* 画面幅に応じて折り返し */
+    gap: 0.5em;                    /* 項目間の間隔 */
+    align-items: flex-start;       /* 複数行になった場合でも上揃え */
+    margin-bottom: 1em;            /* 下の要素との余白 */
+  }
+  
+  /* --- 各項目共通のカード風スタイル --- */
+  .dish-name, .category, .difficulty, .budget, .method {
+    border-radius: 8px;            /* 角丸にしてカード風に */
+    padding: 1em;                  /* ボックス内の余白を十分にとる */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* ごく薄いドロップシャドウ */
+    color: #333;                   /* テキストは濃いめのグレーで可読性確保 */
+  }
+  
+  /* --- 各項目（個別スタイルと色設定） --- */
+  .dish-name {
+    background-color: #FFADAD;     /* 料理名は明るいピンク系で目立たせる */
+    font-size: 1.4em;              /* 他の項目より少し大きな文字サイズ */
+    font-weight: bold;             /* 料理名を太字表示 */
+    margin: 0 0 1em;               /* 上下のデフォルト余白をリセットし、下に適度な余白 */
+  }
+  
+  .category {
+    background-color: #FFD6A5;     /* カテゴリはオレンジ系 */
+    /* 必要に応じてカテゴリ固有のスタイルを追加 */
+  }
+  
+  .difficulty {
+    background-color: #FDFFB6;     /* 難易度は黄色系 */
+  }
+  
+  .budget {
+    background-color: #CAFFBF;     /* 予算は淡いグリーン系 */
+  }
+  
+  /* 作り方（手順テキスト）のスタイル */
+  .method {
+    background-color: #9BF6FF;     /* 作り方は水色系 */
+  }
+  .method h3 {
+    margin: 0 0 0.5em;             /* 上部余白なし、下に少し余白 */
+    font-size: 1.2em;              /* 見出しを適度に強調 */
+  }
+  .method p {
+    margin: 0.5em 0;               /* 手順各段落の間に適度な余白 */
+  }
+  
+  /* --- 予算項目がエラーの場合のスタイル（.errorクラスを追加） --- */
+  .budget.error {
+    background-color: #FFCCCC;     /* エラー時は薄い赤背景に変更 */
+    color: #900;                   /* 文字色も濃い赤にして目立たせる */
+    font-weight: bold;             /* 強調表示 */
+  }
+  
